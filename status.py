@@ -31,12 +31,12 @@ def main():
         executor.map(req, liss)
 
 
-def save_200(content, save_location=r"200.txt"):
+def save_200(content, save_location="200.txt"):
     yaz = open(save_location, 'w')
     print(*content , file=yaz, sep="\n")
 
 
-def save_403(content, save_location=r"403.txt"):
+def save_403(content, save_location="403.txt"):
     yaz = open(save_location, 'w')
     print(*content , file=yaz, sep="\n")
 
