@@ -1,6 +1,6 @@
 import requests
 from concurrent.futures import ThreadPoolExecutor
-save_domain_list = []
+x = []
 
 
 def req(domain):
@@ -34,4 +34,4 @@ def save_to_file(content, save_location=r"output.txt"):
 
 
 main()
-save_to_file(save_domain_list)
+save_to_file(x)
