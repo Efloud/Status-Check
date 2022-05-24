@@ -17,7 +17,7 @@ def req(domain):
 
 
 def main():
-    domains_location = input("Domain Listesi Girin : ")
+    domains_location = input("Domain Listesini Sürükleyin. : ")
     liss = []
     with open(domains_location, encoding="utf-8") as d:
         oku = d.read()
