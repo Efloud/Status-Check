@@ -1,6 +1,7 @@
 import requests
 from concurrent.futures import ThreadPoolExecutor
 from termcolor import colored
+
 responce_200 = []
 responce_403 = []
 
@@ -11,6 +12,7 @@ def req(domain):
         if url.status_code == 200:
             responce_200.append(domain)
             print (colored("[200]", "green"), f"https://{domain}")
+            
         if url.status_code == 403:
             responce_403.append(domain) 
             print (colored("[403]", "red"), f"https://{domain}")
@@ -24,8 +26,8 @@ def main():
     liss = set()
     with open(domains_location, encoding="utf-8") as d:
         oku = d.read()
-        split = oku.splitlines()
-        for i in split:
+        parcala = oku.splitlines()
+        for i in parcala:
             liss.add(i)
     with ThreadPoolExecutor(max_workers=200) as executor:
         executor.map(req, liss)
