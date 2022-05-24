@@ -5,6 +5,7 @@ from termcolor import colored
 responce_200 = []
 responce_403 = []
 
+
 def req(domain):
 
     try:
@@ -12,7 +13,7 @@ def req(domain):
         if url.status_code == 200:
             responce_200.append(domain)
             print (colored("[200]", "green"), f"https://{domain}")
-            
+
         if url.status_code == 403:
             responce_403.append(domain) 
             print (colored("[403]", "red"), f"https://{domain}")
@@ -41,6 +42,7 @@ def save_200(content, save_location="200.txt"):
 def save_403(content, save_location="403.txt"):
     yaz = open(save_location, 'w')
     print(*content , file=yaz, sep="\n")
+
 
 main()
 save_200(responce_200)
