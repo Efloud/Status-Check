@@ -28,9 +28,9 @@ def main():
         executor.map(req, liss)
 
 
-def save_to_file(content, location_filename=r"C:\Users\efloud1\Desktop\output.txt"): # Change Location Path
-    with open(location_filename, 'w') as files:
-        print(*save_domain_list , file=files, sep="\n")
+def save_to_file(content, save_location=r"C:\Users\efloud1\Desktop\output.txt"): # Change Location Path
+    with open(save_location, 'w') as files:
+        print(*content , file=files, sep="\n")
 
 
 main()
