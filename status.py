@@ -7,10 +7,10 @@ def req(domain):
     try:
         url = requests.get(f"https://{domain}", timeout=0.5)
         if url.status_code == 200:
-            save_domain_list.append(domain)
+            x.append(domain)
             print("[200] ", domain)
         if url.status_code == 403:
-            save_domain_list.append(domain) 
+            x.append(domain) 
             print("[403] ", domain)
     except requests.exceptions.ConnectionError:
         pass
