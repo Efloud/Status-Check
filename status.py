@@ -28,7 +28,7 @@ def main():
         executor.map(req, liss)
 
 
-def save_to_file(content, save_location=r"C:\Users\efloud1\Desktop\output.txt"): # Change Location Path
+def save_to_file(content, save_location=r"output.txt"):
     with open(save_location, 'w') as files:
         print(*content , file=files, sep="\n")
 
