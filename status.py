@@ -9,22 +9,22 @@ def req(domain):
         url = requests.get(f"https://{domain}", timeout=0.5)
         if url.status_code == 200:
             save_domain_list.append(domain)
-            print (colored("[200]", "green"), "https://"+ domain)
+            print (colored("[200]", "green"), f"https://{domain}")
         if url.status_code == 403:
             save_domain_list.append(domain) 
-            print (colored("[403]", "red"),"https://"+domain)
+            print (colored("[403]", "red"), f"https://{domain}")
     except requests.exceptions.ConnectionError:
         pass
 
 
 def main():
     domains_location = input("Domain Listesi Girin : ")
-    liss = []
+    liss = set()
     with open(domains_location, encoding="utf-8") as d:
         oku = d.read()
         split = oku.splitlines()
         for i in split:
-            liss.append(i)
+            liss.add(i)
     with ThreadPoolExecutor(max_workers=200) as executor:
         executor.map(req, liss)
 
