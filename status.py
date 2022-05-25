@@ -8,6 +8,7 @@ responce_200 = []
 responce_403 = []
 toplam = 0
 
+
 def req(domain):
     
     try:
@@ -53,5 +54,6 @@ def cikti_kontrol(s_200, s_403, location=f"output.txt"):
 
     print(f"Kayıt Yeri : {os.getcwd()}")    
 
+    
 main()
 cikti_kontrol(responce_200, responce_403)
