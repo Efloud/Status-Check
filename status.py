@@ -42,7 +42,7 @@ def cikti_kontrol(s_200, s_403, location=f"output.txt"):
         with open(location, "w", encoding="utf-8") as s200:
             print(*s_200, file=s200, sep="\n")
 
-    elif s == "403":
+    else:
         with open(location, "w", encoding="utf-8") as s403:
             print(*s_403, file=s403, sep="\n")
 
