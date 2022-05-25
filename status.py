@@ -36,7 +36,8 @@ def main():
 
     with ThreadPoolExecutor(max_workers=200) as executor:
         executor.map(req, liss)
-
+        
+    print("\n")
 
 
 def cikti_kontrol(s_200, s_403, location=f"output.txt"):
