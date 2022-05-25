@@ -39,11 +39,11 @@ def cikti_kontrol(s_200, s_403, location=f"output.txt"):
     print("\n")
     s = input("Almak istediğiniz Çıktıyı giriniz => [200/403]: ")
     if s == "200":
-        with open(location, "w", encoding="utf-8", encoding="utf-8") as s200:
+        with open(location, "w", encoding="utf-8") as s200:
             print(*s_200, file=s200, sep="\n")
 
     else:
-        with open(location, "w", encoding="utf-8", encoding="utf-8") as s403:
+        with open(location, "w", encoding="utf-8") as s403:
             print(*s_403, file=s403, sep="\n")
 
     print(f"Kayıt Yeri : {os.getcwd()}\{location}")    
