@@ -28,13 +28,11 @@ def main():
     liss = set()
 
     with open(domains_location, encoding="utf-8") as d:
-        oku = d.read()
-        parcala = oku.splitlines()
-
-        for i in parcala:
+        oku = d.read().splitlines()
+        for i in oku:
             liss.add(i)
             global toplam
-            toplam += 1        
+            toplam += 1
 
     with ThreadPoolExecutor(max_workers=200) as executor:
         executor.map(req, liss)
@@ -44,7 +42,7 @@ def main():
 def cikti_kontrol(s_200, s_403, location=f"output.txt"):
     print("\n")
 
-    print("Toplam Taranan Sayısı: ", colored(f"[{toplam}]", "red"), "\n")
+    print("Toplam Taranan Sayısı: ", colored(f"[{toplam}]", "red"),"\n")
     s = input("Almak istediğiniz Çıktıyı giriniz => [200/403]: ")
 
     if s == "200":
