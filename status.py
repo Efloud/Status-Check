@@ -1,10 +1,11 @@
-from threading import local
 import requests
 from concurrent.futures import ThreadPoolExecutor
 from termcolor import colored
+import os 
 
 responce_200 = []
 responce_403 = []
+
 
 def req(domain):
     try:
@@ -13,7 +14,7 @@ def req(domain):
             responce_200.append(domain)
             print (colored("[200]", "green"), f"https://{domain}")
 
-        if url.status_code == 403:
+        elif url.status_code == 403:
             responce_403.append(domain) 
             print (colored("[403]", "red"), f"https://{domain}")
     except requests.exceptions.ConnectionError:
@@ -41,9 +42,11 @@ def cikti_kontrol(s_200, s_403, location=f"output.txt"):
         with open(location, "w", encoding="utf-8") as s200:
             print(*s_200, file=s200, sep="\n")
 
-    if s == "403":
+    elif s == "403":
         with open(location, "w", encoding="utf-8") as s403:
             print(*s_403, file=s403, sep="\n")
+
+    print(f"Kayıt Yeri : {os.getcwd()}\{location}")    
 
 main()
 cikti_kontrol(responce_200, responce_403)
