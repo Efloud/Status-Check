@@ -8,6 +8,7 @@ responce_403 = []
 
 
 def req(domain):
+
     try:
         url = requests.get(f"https://{domain}", timeout=0.5)
         if url.status_code == 200:
@@ -30,13 +31,14 @@ def main():
         parcala = oku.splitlines()
         for i in parcala:
             liss.add(i)
+
     with ThreadPoolExecutor(max_workers=200) as executor:
         executor.map(req, liss)
 
 
-
 def cikti_kontrol(s_200, s_403, location=f"output.txt"):
     print("\n")
+
     s = input("Almak istediğiniz Çıktıyı giriniz => [200/403]: ")
     if s == "200":
         with open(location, "w", encoding="utf-8") as s200:
@@ -47,6 +49,7 @@ def cikti_kontrol(s_200, s_403, location=f"output.txt"):
             print(*s_403, file=s403, sep="\n")
 
     print(f"Kayıt Yeri : {os.getcwd()}")    
+
 
 main()
 cikti_kontrol(responce_200, responce_403)
