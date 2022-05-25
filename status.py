@@ -25,6 +25,7 @@ def req(domain):
 
 
 def main():
+    
     domains_location = input("Domain Listesi Girin : ")
     liss = set()
     global toplam
@@ -43,7 +44,6 @@ def main():
 def cikti_kontrol(s_200, s_403, location=f"output.txt"):
     
     sorgu = input("Almak istediğiniz Çıktıyı giriniz => [200/403]: ")
-
     if sorgu == "200":
         with open(location, "w", encoding="utf-8") as s200:
             print(*s_200, file=s200, sep="\n")
