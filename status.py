@@ -1,4 +1,3 @@
-from webbrowser import get
 import requests
 from concurrent.futures import ThreadPoolExecutor
 from termcolor import colored
