@@ -46,7 +46,7 @@ def cikti_kontrol(s_200, s_403, location=f"output.txt"):
         with open(location, "w", encoding="utf-8") as s403:
             print(*s_403, file=s403, sep="\n")
 
-    print(f"Kayıt Yeri : {os.getcwd()}\{location}")    
+    print(f"Kayıt Yeri : {os.getcwd()}")    
 
 main()
 cikti_kontrol(responce_200, responce_403)
