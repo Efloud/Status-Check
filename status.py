@@ -26,12 +26,11 @@ def req(domain):
 def main():
     domains_location = input("Domain Listesi Girin : ")
     liss = set()
-
+    global toplam
     with open(domains_location, encoding="utf-8") as d:
         oku = d.read().splitlines()
         for i in oku:
             liss.add(i)
-            global toplam
             toplam += 1
 
     with ThreadPoolExecutor(max_workers=200) as executor:
@@ -40,9 +39,8 @@ def main():
 
 
 def cikti_kontrol(s_200, s_403, location=f"output.txt"):
-    print("\n")
-
-    print("Toplam Taranan Sayısı: ", colored(f"[{toplam}]", "red"),"\n")
+    
+    print("Toplam Taranan Sayısı: ", colored(f"[{toplam}]", "red"), sep="")
     s = input("Almak istediğiniz Çıktıyı giriniz => [200/403]: ")
 
     if s == "200":
@@ -53,7 +51,7 @@ def cikti_kontrol(s_200, s_403, location=f"output.txt"):
         with open(location, "w", encoding="utf-8") as s403:
             print(*s_403, file=s403, sep="\n")
 
-    print(f"Kayıt Yeri : {os.getcwd()}\{location}")    
+    print(f"Kayıt Yeri : {os.getcwd()}")    
 
 main()
 cikti_kontrol(responce_200, responce_403)
