@@ -1,3 +1,4 @@
+from threading import local
 import requests
 from concurrent.futures import ThreadPoolExecutor
 from termcolor import colored
@@ -5,9 +6,7 @@ from termcolor import colored
 responce_200 = []
 responce_403 = []
 
-
 def req(domain):
-
     try:
         url = requests.get(f"https://{domain}", timeout=0.5)
         if url.status_code == 200:
@@ -34,16 +33,17 @@ def main():
         executor.map(req, liss)
 
 
-def save_200(content, save_location="200.txt"):
-    yaz = open(save_location, 'w')
-    print(*content , file=yaz, sep="\n")
 
+def cikti_kontrol(s_200, s_403, location=f"output.txt"):
+    print("\n")
+    s = input("Almak istediğiniz Çıktıyı giriniz => [200/403]: ")
+    if s == "200":
+        with open(location, "w", encoding="utf-8") as s200:
+            print(*s_200, file=s200, sep="\n")
 
-def save_403(content, save_location="403.txt"):
-    yaz = open(save_location, 'w')
-    print(*content , file=yaz, sep="\n")
-
+    if s == "403":
+        with open(location, "w", encoding="utf-8") as s403:
+            print(*s_403, file=s403, sep="\n")
 
 main()
-save_200(responce_200)
-save_403(responce_403)
+cikti_kontrol(responce_200, responce_403)
