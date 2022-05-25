@@ -41,7 +41,6 @@ def main():
 
 def cikti_kontrol(s_200, s_403, location=f"output.txt"):
     
-    print("Toplam Taranan Sayısı: ", colored(f"[{toplam}]", "red"), sep="")
     sorgu = input("Almak istediğiniz Çıktıyı giriniz => [200/403]: ")
 
     if sorgu == "200":
@@ -51,7 +50,8 @@ def cikti_kontrol(s_200, s_403, location=f"output.txt"):
     else:
         with open(location, "w", encoding="utf-8") as s403:
             print(*s_403, file=s403, sep="\n")
-
+            
+    print("Toplam Taranan Sayısı: ", colored(f"[{toplam}]", "red"), sep="")
     print(f"Kayıt Yeri : {os.getcwd()}")    
 
     
