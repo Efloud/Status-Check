@@ -44,7 +44,7 @@ def main():
 def cikti_kontrol(s_200, s_403, location=f"output.txt"):
     print("\n")
 
-    print("Toplam Taranan Sayısı: ", f"[{toplam}]", "\n")
+    print("Toplam Taranan Sayısı: ", colored(f"[{toplam}]", "red", "\n"))
     s = input("Almak istediğiniz Çıktıyı giriniz => [200/403]: ")
 
     if s == "200":
