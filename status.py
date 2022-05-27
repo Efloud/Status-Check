@@ -40,7 +40,7 @@ def main():
     print("Toplam Taranan Sayısı: ", colored(f"[{toplam}]", "red"), sep="")
 
 
-def cikti_kontrol(s_200, s_403, location=f"output.txt"):
+def cikti_kontrol(s_200, s_403, location="output.txt"):
     
     sorgu = input("Almak istediğiniz Çıktıyı giriniz => [200/403]: ")
     if sorgu == "200":
