@@ -5,9 +5,6 @@ import os
 import pyfiglet
 
 banner = pyfiglet.figlet_format("EfStatusCheck")
-
-
-
 responce_200 = []
 responce_403 = []
 toplam = 0
