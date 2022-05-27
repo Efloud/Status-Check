@@ -5,6 +5,8 @@ import os
 import pyfiglet
 
 banner = pyfiglet.figlet_format("EfStatusCheck")
+
+
 responce_200 = []
 responce_403 = []
 toplam = 0
@@ -26,9 +28,10 @@ def req(domain):
 
 
 def main():
-    
-    print(colored(banner, "red"))
+
+    print(colored(banner, "red"), end="")
     domains_location = input("Domain Listesi Girin : ")
+    print("\n", end="")
     liss = set()
     global toplam
     with open(domains_location, encoding="utf-8") as d:
