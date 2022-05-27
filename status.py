@@ -2,10 +2,7 @@ import requests, os, pyfiglet
 from concurrent.futures import ThreadPoolExecutor
 from termcolor import colored
 
-
 banner = pyfiglet.figlet_format("EfStatusCheck")
-
-
 responce_200 = []
 responce_403 = []
 toplam = 0
