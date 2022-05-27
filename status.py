@@ -59,3 +59,4 @@ def cikti_kontrol(s_200, s_403, location="output.txt"):
     
 main()
 cikti_kontrol(responce_200, responce_403)
+quit()
