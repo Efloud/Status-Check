@@ -2,6 +2,11 @@ import requests
 from concurrent.futures import ThreadPoolExecutor
 from termcolor import colored
 import os 
+import pyfiglet
+
+banner = pyfiglet.figlet_format("EfStatusCheck")
+
+
 
 responce_200 = []
 responce_403 = []
@@ -24,7 +29,8 @@ def req(domain):
 
 
 def main():
-
+    
+    print(colored(banner, "red"))
     domains_location = input("Domain Listesi Girin : ")
     liss = set()
     global toplam
@@ -36,11 +42,12 @@ def main():
 
     with ThreadPoolExecutor(max_workers=200) as executor:
         executor.map(req, liss)
+        
     print("\n")
     print("Toplam Taranan Sayısı: ", colored(f"[{toplam}]", "red"), sep="")
 
 
-def cikti_kontrol(s_200, s_403, location="output.txt"):
+def cikti_kontrol(s_200, s_403, location=f"output.txt"):
     
     sorgu = input("Almak istediğiniz Çıktıyı giriniz => [200/403]: ")
     if sorgu == "200":
