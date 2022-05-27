@@ -1,2 +1,4 @@
 # Status-Check!
-![Adsız](https://user-images.githubusercontent.com/68462068/170799899-743fc36b-7182-409b-9f80-2de9e7b0c7db.png)
+![Adsız]
+(https://user-images.githubusercontent.com/68462068/170800016-38538848-5966-4075-8d2d-be5112c97065.png)
+
