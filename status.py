@@ -36,7 +36,6 @@ def main():
 
     with ThreadPoolExecutor(max_workers=200) as executor:
         executor.map(req, liss)
-        
     print("\n")
     print("Toplam Taranan Sayısı: ", colored(f"[{toplam}]", "red"), sep="")
 
@@ -53,6 +52,9 @@ def cikti_kontrol(s_200, s_403, location=f"output.txt"):
         with open(location, "w", encoding="utf-8") as s403:
             print(*s_403, file=s403, sep="\n")
             print(f"Kayıt Yeri : {os.getcwd()}")  
+    
+    else:
+        print("Lütfen 200 veya 400 Çıktısını Almayı DENEYİN!")
 
     
 main()
