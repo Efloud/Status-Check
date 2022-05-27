@@ -24,7 +24,7 @@ def req(domain):
 
 
 def main():
-    
+
     domains_location = input("Domain Listesi Girin : ")
     liss = set()
     global toplam
@@ -38,6 +38,7 @@ def main():
         executor.map(req, liss)
         
     print("\n")
+    print("Toplam Taranan Sayısı: ", colored(f"[{toplam}]", "red"), sep="")
 
 
 def cikti_kontrol(s_200, s_403, location=f"output.txt"):
@@ -46,13 +47,12 @@ def cikti_kontrol(s_200, s_403, location=f"output.txt"):
     if sorgu == "200":
         with open(location, "w", encoding="utf-8") as s200:
             print(*s_200, file=s200, sep="\n")
-
-    else:
+            print(f"Kayıt Yeri : {os.getcwd()}")  
+            
+    elif sorgu == "403":
         with open(location, "w", encoding="utf-8") as s403:
             print(*s_403, file=s403, sep="\n")
-            
-    print("Toplam Taranan Sayısı: ", colored(f"[{toplam}]", "red"), sep="")
-    print(f"Kayıt Yeri : {os.getcwd()}")    
+            print(f"Kayıt Yeri : {os.getcwd()}")  
 
     
 main()
