@@ -32,6 +32,7 @@ def main():
     print("-"*40, sep="")
     domains_location = input("Domain Listesi Girin : ")
     print("-"*40, "\n", sep="", end="")
+    
     liss = set()
     global toplam
     with open(domains_location, encoding="utf-8") as d:
