@@ -59,7 +59,7 @@ def cikti_kontrol(s_200, s_403, location=f"output.txt"):
             print(f"Kayıt Yeri : {os.getcwd()}", "\n", "-"*40 , sep="")  
     
     else:
-        print("Lütfen 200 veya 400 Çıktısını Almayı DENEYİN!")
+        print("Lütfen 200 veya 400 Çıktısını Almayı DENEYİN!", "\n", "-"*40, sep="")
 
     
 main()
